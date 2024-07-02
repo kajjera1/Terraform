@@ -20,9 +20,9 @@ ADVANTGAES:
 3) IAM User should have resources Access
 
 
-1 .Create EC2 instance (amazon Linux)
+1 . Create EC2 instance (amazon Linux)
 
-2 .Connect to EC2 VM using Mobaxterm
+2 . Connect to EC2 VM using Mobaxterm
 
 3 . Swith to root user 
      $ sudo su -
@@ -39,7 +39,7 @@ ADVANTGAES:
     
      $ terraform -v  
    
-6 .aws configure
+6 . aws configure
  
  give access key & secret key , give region, output formate    
 
