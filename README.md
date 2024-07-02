@@ -42,3 +42,14 @@ ADVANTGAES:
 6 .aws configure
  
  give access key & secret key , give region, output formate    
+
+
+ TERRAFORM COMMANDS:
+ 
+terraform init	: initalize the provider plugins on backend
+
+terraform plan	: to create execution plan
+
+terrafrom apply : to create resources
+
+terrafrom destroy : to delete resources
