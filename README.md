@@ -45,11 +45,23 @@ ADVANTGAES:
 
 
  TERRAFORM COMMANDS:
+
+  Initalize the provider plugins on backend
  
-terraform init	: initalize the provider plugins on backend
+    $ terraform init	
 
-terraform plan	: to create execution plan
+ Format your script (indent spaces)
+ 
+    $ terraform fmt 
 
-terrafrom apply : to create resources
+ To create execution plan
 
-terrafrom destroy : to delete resources
+    $ terraform plan	 
+
+To create resources
+
+    $ terrafrom apply 
+
+To delete resources
+
+    $ terrafrom destroy 
