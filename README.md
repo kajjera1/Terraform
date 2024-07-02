@@ -44,7 +44,7 @@ ADVANTGAES:
  give access key & secret key , give region, output formate    
 
 
- TERRAFORM COMMANDS:
+# TERRAFORM COMMANDS:
 
   Initalize the provider plugins on backend
  
