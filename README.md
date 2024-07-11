@@ -15,9 +15,13 @@ ADVANTGAES:
 # Terraform installation 
 
 ##Pre-Requisites 
-1) Cloud Platform Account (AWS, Azure, GCP, Openstack etc..)
-2) IAM User account (Secret Key and Access Key)
-3) IAM User should have resources Access
+1) Install AWS CLI (Command Line Interface): https://aws.amazon.com/cli/
+2) Cloud Platform Account (AWS, Azure, GCP, Openstack etc..)
+3) IAM User account (Secret Key and Access Key)
+4) IAM User should have resources Access
+5) Configure AWS CLI Credentials:
+
+       aws configure
 
 
 1 . Create EC2 instance (amazon Linux)
