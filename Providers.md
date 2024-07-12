@@ -1,34 +1,24 @@
 # Providers 
 
 A provider in Terraform is a plugin that enables interaction with an API. 
-This includes cloud providers, SaaS providers, and other APIs. The providers are specified in the Terraform configuration code. They tell Terraform which services it needs to interact with.
+This includes cloud providers, SaaS providers, and other APIs. The providers are specified in the Terraform configuration code. 
 
-For example, if you want to use Terraform to create a virtual machine on AWS, you would need to use the aws provider. The aws provider provides a set of resources that Terraform can use to create, manage, and destroy virtual machines on AWS.
 
-Here is an example of how to use the aws provider in a Terraform configuration:
+Here is an example of how to use the aws provider:
 
 ```hcl
 provider "aws" {
-  region = "us-east-1"
+  region = "us-west-1"
 }
 
-resource "aws_instance" "example" {
-  ami = "ami-0123456789abcdef0" # Change the AMI 
-  instance_type = "t2.micro"
+resource "aws_instance" "one" {
+  ami = "ami-0123456789abceed1" # Change the AMI 
+  instance_type = "t2.nano"
 }
 ```
 
-In this example, we are first defining the aws provider. We are specifying the region as us-east-1. Then, we are defining the `aws_instance` resource. We are specifying the `AMI ID` and the `instance type`.
-
 When Terraform runs, it will first install the aws provider. Then, it will use the aws provider to create the virtual machine.
 
-Here are some other examples of providers:
-
-- `azurerm` - for Azure
-- `google` - for Google Cloud Platform
-- `kubernetes` - for Kubernetes
-- `openstack` - for OpenStack
-- `vsphere` - for VMware vSphere
 
 There are many other providers available, and new ones are being added all the time.
 
@@ -41,22 +31,21 @@ There are three main ways to configure providers in Terraform:
 
 ### In the root module 
 
-This is the most common way to configure providers. The provider configuration block is placed in the root module of the Terraform configuration. This makes the provider configuration available to all the resources in the configuration.
-
+This is the most common way to configure providers.
 ```hcl
 provider "aws" {
-  region = "us-east-1"
+  region = "us-west-1"
 }
 
-resource "aws_instance" "example" {
-  ami = "ami-0123456789abcdef0"
+resource "aws_instance" "one" {
+  ami = "ami-0123456789abcghj0"
   instance_type = "t2.micro"
 }
 ```
 
 ### In a child module
 
-You can also configure providers in a child module. This is useful if you want to reuse the same provider configuration in multiple resources.
+This is useful if you want to reuse the same provider configuration in multiple resources.
 
 ```hcl
 module "aws_vpc" {
@@ -66,16 +55,16 @@ module "aws_vpc" {
   }
 }
 
-resource "aws_instance" "example" {
-  ami = "ami-0123456789abcdef0"
-  instance_type = "t2.micro"
+resource "aws_instance" "one" {
+  ami = "ami-0123456789fghcdef0"
+  instance_type = "t2.nano"
   depends_on = [module.aws_vpc]
 }
 ```
 
 ### In the required_providers block
 
-You can also configure providers in the required_providers block. This is useful if you want to make sure that a specific provider version is used.
+This is useful if you want to make sure that a specific provider version is used.
 
 ```hcl
 terraform {
@@ -87,10 +76,9 @@ terraform {
   }
 }
 
-resource "aws_instance" "example" {
-  ami = "ami-0123456789abcdef0"
-  instance_type = "t2.micro"
+resource "aws_instance" "one" {
+  ami = "ami-0123456789asdfgef0"
+  instance_type = "t2.large"
 }
 ```
 
-The best way to configure providers depends on your specific needs. If you are only using a single provider, then configuring it in the root module is the simplest option. If you are using multiple providers, or if you want to reuse the same provider configuration in multiple resources, then configuring it in a child module is a good option. And if you want to make sure that a specific provider version is used, then configuring it in the required_providers block is the best option.
