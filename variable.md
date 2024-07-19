@@ -1,4 +1,4 @@
-\
+
 # Variables
 
 Input and output variables in Terraform are essential for parameterizing and sharing values within your Terraform configurations and modules. They allow configurations more dynamic, reusable, and flexible.
